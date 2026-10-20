@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#100D18">
+    <meta
+      name="description"
+      content="Une petite surprise interactive, imaginée par Aï D'ou pour te faire sourire."
+    >
+    <title>Une petite surprise — Aï D'ou</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <div class="star-field" aria-hidden="true">
+      <span class="star star--one">✦</span>
+      <span class="star star--two">✧</span>
+      <span class="star star--three">✦</span>
+      <span class="star star--four">✧</span>
+    </div>
+
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href="./" aria-label="Aï D'ou — revenir à l'accueil">
+          <span class="wordmark-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" focusable="false">
+              <path d="M16 27s-10.8-6.2-10.8-14.1A5.7 5.7 0 0 1 16 9.4a5.7 5.7 0 0 1 10.8 3.5C26.8 20.8 16 27 16 27Z"/>
+              <path class="wordmark-spark" d="M23.5 4.2v3.2m-1.6-1.6h3.2"/>
+            </svg>
+          </span>
+          <span class="wordmark-copy">
+            <strong>Aï D'ou</strong>
+            <span>une petite attention, rien que pour toi</span>
+          </span>
+        </a>
+        <p class="header-note">
+          <span class="status-dot" aria-hidden="true"></span>
+          Une expérience imaginée à la main
+        </p>
+      </header>
+
+      <section class="progress-panel" aria-label="Progression de la surprise">
+        <div class="progress-copy">
+          <span id="progress-caption">À ton rythme</span>
+          <span id="progress-count">Le début</span>
+        </div>
+        <div
+          id="progress-track"
+          class="progress-track"
+          role="progressbar"
+          aria-label="Progression du jeu"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <span id="progress-fill" class="progress-fill"></span>
+        </div>
+      </section>
+
+      <main id="app" class="app" aria-live="polite">
+        <noscript>
+          <div class="noscript-card">
+            <h1>Cette petite surprise a besoin de JavaScript ✨</h1>
+            <p>Active JavaScript dans ton navigateur pour découvrir l'expérience interactive.</p>
+          </div>
+        </noscript>
+      </main>
+
+      <footer class="global-footer">
+        <p>
+          Tes réponses restent dans la mémoire de cette page. Rien n'est envoyé sans ton choix
+          et sans une action de ta part.
+        </p>
+        <button id="clear-responses" class="text-button" type="button">
+          Effacer mes réponses
+        </button>
+      </footer>
+    </div>
+
+    <dialog
+      id="portrait-lightbox"
+      class="portrait-lightbox"
+      aria-labelledby="portrait-lightbox-title"
+    >
+      <div class="portrait-lightbox__panel">
+        <button
+          id="portrait-lightbox-close"
+          class="portrait-lightbox__close"
+          type="button"
+          aria-label="Fermer la photo"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+        <h2 id="portrait-lightbox-title" class="portrait-lightbox__title"></h2>
+        <img id="portrait-lightbox-image" class="portrait-lightbox__image" alt="">
+        <p class="portrait-lightbox__hint">Appuie sur Échap ou sur × pour fermer.</p>
+      </div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>
